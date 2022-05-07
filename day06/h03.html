@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现表格的DOM操作</title>
+</head>
+<body>
+    <span>商品名称:</span><input type="text"  id="name">
+    <span>数量:</span><input type="text" id="number">
+    <span>单价:</span><input type="text" id="price">
+    <button onclick="add()">添加</button>
+    <br><br>
+    <table border="1" cellpadding="0" cellspacing="0" width="400px" id="table">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="selectAll" onclick="selectAll()">全选</th>
+                <th>商品名称</th>
+                <th>数量</th>
+                <th>单价</th>
+                <th>金额</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <td><input type="checkbox" id=""></td>
+                <td>荷叶飘香</td>
+                <td>10</td>
+                <td>5.5</td>
+                <td>55</td>
+                <td><button onclick="del(this)">删除</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+    	function add(){
+    		//获取输入框的属性
+    		var name = document.getElementById("name");
+    		var count = parseInt(document.getElementById("number"));
+    		var price = parseInt(document.getElementById("price"));
+    		
+    		//创建元素
+    	}
+    	
+    	
+    	
+    	
+    	
+    	
+        function del(e){
+            e.parentElement.parentElement.remove();
+        }
+
+        function selectAll(){
+            //获取表格中所有的input标签
+            var list = document.getElementById("table").getElementsByTagName("input");
+            //遍历,如果没选中的全部选中
+            for(var i=0;i<list.length;i++){
+                if(list[i].checked == false){
+                    list[i].checked = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
