@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<!--  	
+		onload="loadProvince()"表示当网页加载完后再执行函数loadProvince()   
+	-->
+	<body onload="loadProvince()">
+		<!--  onchange="loadCity()"表示当省发生改变时,加载相应的城市  -->
+		省:<select id="province" onchange="loadCity()">
+			<option value="">--请选择--</option>
+		</select>
+		
+		市:<select id="city" >
+			<option value="">--请选择--</option>
+		</select>
+		
+		
+		
+		<script>
+
+			var provinceJSON = [
+				{"name":"北京市","city":["北京市"]},
+				{"name":"上海市","city":["上海市"]},
+				{"name":"湖北省","city":['武汉市','黄石市','鄂州市','襄阳市']},
+				{"name":"湖南省","city":['长沙市','常德市','岳阳市']}
+			]
+			
+			/*
+			 * 加载省份
+			 */
+			function loadProvince(){
+				//获取省份select节点
+				var prov_select = document.getElementById("province");
+				//添加省列表项
+				for(var i=0;i<provinceJSON.length;i++){
+					//创建列表项节点
+					var opt = document.createElement("option");
+					//给列表项的属性赋值
+					opt.value=provinceJSON[i].name;
+					opt.innerText=provinceJSON[i].name;
+					//把列表项添加到select节点中
+					prov_select.appendChild(opt);
+				}
+			}
+
+			/**
+			 * 加载城市
+			 */
+			function loadCity(){
+				/*
+				 * 获得当前点击下拉框(省)的下标
+				 * selectedIndex用来获取列表项在下拉列表中的下标
+				 * -1是因为列表项有 --请选择-- 这个应该排除
+				 */
+				var provinceIndex = document.getElementById("province").selectedIndex-1;
+				//根据省的下标，获得该省下所有的城市数组
+            	var cityItem=provinceJSON[provinceIndex].city;
+            	
+            	//获取城市下拉列表
+            	var city_select = document.getElementById("city");
+            	//清空列表项中以前添加的城市
+            	city_select.length=1;
+            	//添加城市列表项
+            	for(var i=0;i<cityItem.length;i++){
+            		//创建列表项节点
+					var opt = document.createElement("option");
+					opt.value=cityItem[i];
+					opt.innerText=cityItem[i];
+					//把列表项添加到select节点中
+					city_select.appendChild(opt);
+            	}
+			}
+		</script>
+	</body>
+</html>
