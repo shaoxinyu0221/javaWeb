@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一个点不到的按钮</title>
+    <style>
+        #btn {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn" onmousemove="fun()">这是一个点不到的按钮</button>
+
+    <script>
+        function fun(){
+            //获取按钮当前坐标
+            var btn = document.getElementById("btn");
+            btn.style.top = Math.random()*innerHeight + "px";
+            btn.style.left = Math.random()*innerWidth + "px";
+        }
+    </script>
+</body>
+</html>

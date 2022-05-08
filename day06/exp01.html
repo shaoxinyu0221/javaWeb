@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加菜品,不能重复</title>
+</head>
+
+<body>
+    <span>请输入菜品:</span><input type="text" id="menu"><button onclick="add()">添加</button>
+    <ul id="myul">
+        <li>梅菜扣肉</li>
+        <li>回锅肉</li>
+        <li>水煮鱼</li>
+    </ul>
+
+
+    <script>
+        function add() {
+            var newMenu = document.getElementById("menu").value;
+            var newLi = document.createElement("li");
+            newLi.innerText = newMenu;
+            var list = document.getElementById("myul").getElementsByTagName("li");
+            for (var i = 0; i < list.length; i++) {
+               if(list[i].innerText==newMenu){
+                    alert("重复不能添加");
+                    return;
+               }
+            }
+            document.getElementById("myul").appendChild(newLi);
+        }
+    </script>
+</body>
+
+</html>

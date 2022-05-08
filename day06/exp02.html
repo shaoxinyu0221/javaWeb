@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雪花</title>
+    <style>
+        body {
+            background: url(img/bg.jpg) no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+
+        .buttons {
+            position: fixed;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="add()">添加</button>
+        <button onclick="del()">删除</button>
+        <button onclick="start()">开始</button>
+        <button onclick="stop()">停止</button>
+    </div>
+    <img src="img/snow.png" alt="">
+    <script>
+        function createImg(){
+            var img = document.createElement("img");
+            img.src = "img/snow.png";
+            img.style.cssText = "width: 100px; height: 100px; position: absolute;";
+            img.style.top = Math.random()*innerHeight+"px";
+            img.style.left = Math.random()*innerWidth+"px";
+            document.body.appendChild(img);
+        }
+
+        function add(){
+            for(var i=0;i<=30;i++){
+                createImg();
+            }
+        }
+
+        function del(){
+            let list = document.getElementsByTagName("img");
+            for(let i=list.length-1;i>=0;i--){
+                list[i].remove();
+            }
+        }
+
+        function move(){
+            let list = document.getElementsByTagName("img");
+            for(let i=0;i<list.length;i++){
+                let top = list[i].style.top;
+                top = parseInt(top.substring(0,top.length-2));
+                list[i].style.top = top + 1 + "px";
+            }
+        }
+
+        var time;
+        function start(){
+            time = setInterval('move()',10);
+        }
+        
+        function stop(){
+            clearInterval(time);
+        }
+    </script>
+</body>
+</html>
