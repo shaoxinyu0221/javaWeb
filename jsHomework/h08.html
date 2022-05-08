@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.将1-20之间所有的偶数输出（用关键字continue和不用continue两种方法做）
+        for(var i=1;i<=20;i++){
+            if(i%2==0){
+                document.write(i + "<br>");
+            }
+        }
+        for(var i=1;i<=20;i++){
+            if(i%2!=0){
+                continue;
+            }
+            document.write(i + "<br>");
+        }
+        //2.从键盘输入一个 0~99999 之间的任意数，判断输入的数是几位数？
+        //var number01 = prompt("输入一个 0~99999 之间的任意数");
+
+        //3.打印1~100之间 6的倍数。
+        for(var i=1;i<=100;i++){
+            if(i%6==0){
+                document.write(i + "<br>");
+            }
+        }
+
+        //4.我国最高山峰是珠穆朗玛峰，8848米。现在我有一张足够大的纸，它的厚度是0.01米。请问，我折叠多少次，可以超过珠穆朗玛峰的高度。
+        var count01 = 0;
+        var height = 0.01;
+        while(height <= 8848){
+            height *= 2;
+            count01++;
+        }
+        document.write("共需要折叠" + count01 + "次");
+        document.write("<br>");
+        //5.使用循环计算1-100之间5的倍数的个数。
+        var count02 = 0;
+        for(var i=1;i<=100;i++){
+            if(i%6==0){
+                count02++;
+            }
+        }
+        document.write("共有" + count02 + "个数");
+    </script>
+</head>
+<body>
+    
+    <pre>
+        循环
+        1.将1-20之间所有的偶数输出（用关键字continue和不用continue两种方法做）
+
+        2.从键盘输入一个 0~99999 之间的任意数，判断输入的数是几位数？
+
+        3.打印1~100之间 6的倍数。
+
+        4.我国最高山峰是珠穆朗玛峰，8848米。现在我有一张足够大的纸，它的厚度是0.01米。请问，我折叠多少次，可以超过珠穆朗玛峰的高度。
+
+        5.使用循环计算1-100之间5的倍数的个数。
+    </pre>
+
+</body>
+</html>

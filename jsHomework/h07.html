@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var chinese = prompt("请输入语文成绩");
+        var math = prompt("请输入数学成绩");
+        var english = prompt("请输入英语成绩");
+
+        var avg = (chinese+math+english)/3;
+        if(chinese>70&&math>70&&english>70){
+            if(avg>=90){
+                document.write("一等奖学金");
+            }else if(avg>=85){
+                document.write("二等奖学金");
+            }else if(avg>=75){
+                document.write("三等奖学金");
+            }else{
+                document.write("没有奖学金");
+            }
+        }else{
+            document.write("没有评奖资格");
+        }
+    </script>
+</head>
+<body> 
+    <pre>
+        7.使用if语句的嵌套,完成如下练习
+        计算奖学金
+        考试科目：语文、数学、英语（均为百分制），三门课程的成绩存储在三个变量中
+        最终得分计算规则：语、数、英三门成绩的平均分为最终得分
+        满足以下条件有资格参加奖学金评比：
+        语文、数学、英语三门成绩均大于70分
+        评定奖学金标准：
+        最终成绩大于等于90分 一等奖学金
+        最终成绩大于等于85分 二等奖学金
+        最终成绩大于等于75分 三等奖学金
+    </pre>
+</body>
+</html>

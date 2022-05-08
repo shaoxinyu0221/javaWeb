@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var score = prompt("请输入同学的分数");
+        if(score>=0&&score<60){
+            document.write("C");
+        }else if(score>60&&score<=80){
+            document.write("B");
+        }else if(score>80&&score<=100){
+            document.write("A");
+        }else{
+            document.write("输入有误");
+        }
+    </script>
+</head>
+<body>
+    <pre>
+        5.用A,B,C等级对学生的的成绩分类,
+        其中0 - 59是c, 60 – 80是B,81 – 100 是A等级,请用代码实现该功能,判断某位同学的分数等级,同学的的分数存储在一个变量中
+    </pre>
+</body>
+</html>
